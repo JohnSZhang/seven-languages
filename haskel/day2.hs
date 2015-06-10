@@ -1,6 +1,3 @@
 module Main where
-  quickSort [] = []
-  quickSort (p:xs) = (quickSort lesser) ++ [p] ++ (quickSort greater)
-      where
-          lesser  = filter (< p) xs
-          greater = filter (>= p) xs
+  sort [] = []
+  sort (h:t) = (sort (filter (< h) t)) ++ [h] ++ (sort (filter (>= h) t))
